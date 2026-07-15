@@ -29,7 +29,7 @@ jobs: #a workflow run is made up of one or more jobs, which run in parallel by d
         with:
           fetch-depth: 0 #fetch all history for all branches and tags
       - name: "Checking multiple lines of run code"
-      - run: echo "This is the first line of the test job - multi line script"
+        run: echo "This is the first line of the test job - multi line script"
       - run: echo "This is the second line of the test job - multi line script"
       - run: echo "This is the third line of the test job- multi line script"
 
