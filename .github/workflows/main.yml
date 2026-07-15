@@ -27,8 +27,8 @@ jobs: #a workflow run is made up of one or more jobs, which run in parallel by d
         with:
           fetch-depth: 0 #fetch all history for all branches and tags
       - name: "Run tests"
-        run: echo "Run your tests here"
-        run: echo "This is the echo command of test job"
+      - run: echo "Run your tests here"
+      - run: echo "This is the echo command of test job"
 
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest #provided and managed by github
