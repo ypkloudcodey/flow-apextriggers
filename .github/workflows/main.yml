@@ -19,6 +19,7 @@ jobs: #a workflow run is made up of one or more jobs, which run in parallel by d
         echo "See https://help.github.com/actions for more information about GitHub Actions."
     - name: "Last line script"
       run: echo "This is the last line of the multi-line script"
+      
 
   test:
     runs-on: ubuntu-latest #provided and managed by github
@@ -27,6 +28,10 @@ jobs: #a workflow run is made up of one or more jobs, which run in parallel by d
         uses: actions/checkout@v6 #checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
         with:
           fetch-depth: 0 #fetch all history for all branches and tags
+      -name: "Checking multiple lines of run code"
+      - run: echo "This is the first line of the test job - multi line script"
+      - run: echo "This is the second line of the test job - multi line script"
+      - run: echo "This is the third line of the test job- multi line script"
 
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest #provided and managed by github
