@@ -4,6 +4,7 @@ run-name : "My First Run"
 on: [push]
 jobs: #a workflow run is made up of one or more jobs, which run in parallel by default
   build:
+    needs: [test, Explore-GitHub-Actions] #this job will only run after the jobs in the needs array have completed successfully
     runs-on: ubuntu-latest #provided and managed by github
     steps:
     - name: "Checkout"
