@@ -6,17 +6,18 @@ jobs: #a workflow run is made up of one or more jobs, which run in parallel by d
   build:
     runs-on: ubuntu-latest #provided and managed by github
     steps:
-      name: "Checkout"
+    - name: "Checkout"
       uses: actions/checkout@v6 #checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       with:
         fetch-depth: 0 #fetch all history for all branches and tags
-      name: "One code line script"
+    - name: "One code line script"
       run: echo "Hello, world!"
-      name: "Multi-line script"
+    - name: "Multi-line script"
       run: |
         echo "This is the first line"
         echo "Add other actions to build, test, and deploy your project."
         echo "See https://help.github.com/actions for more information about GitHub Actions."
+    - name: "Last line script"
       run: echo "This is the last line of the multi-line script"
 
   test:
